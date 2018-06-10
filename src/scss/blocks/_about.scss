@@ -1,0 +1,88 @@
+.about {
+    padding: $outside-padding;
+    font-family: $font;
+    display: flex;
+    flex-wrap: wrap;
+    &__header {
+        margin: 0 0 10px;
+        width: 100%;
+        text-align: center;
+        font-size: 40px;
+        font-weight: 100;  
+      }
+    &__item {
+        max-width: 235px;
+        margin: 0 auto;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #e7e9ee;
+        color: $main-page-text;
+    }
+    &__num {
+        font-size: 60px;
+        font-weight: 800;
+    }
+    &__button {
+        margin: 10px;
+        padding: 7px 25px 7px 25px;
+        color: $main-page-text;
+        font-size: 14px;
+        border: solid $main-page-text 2px;
+        &:hover {
+            color: #e7e9ee;
+            background-color: $main-page-text;
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .about {
+        width: 100%;
+        &__header {
+            margin: 15px 0 30px;
+        }
+        &__text {
+            line-height: 2;
+        }
+        &__item {
+            margin: 0;
+            position: relative;
+            overflow: hidden;
+            height: 160px;
+            transition: background-color .4s ease-in, color .2s linear, transform .2s linear;
+            &:hover {
+                background-color: $main-page-text;
+                color: #ffffff;
+                transform: scale(1.1);
+                box-shadow: $shadow;
+            }
+            &:hover .about__button {
+                visibility: visible;
+                transform: translateY(0);
+                height: auto;
+                top: 5px;
+                margin: 8px 0 0;
+                color: #ffffff;
+                border-color: #ffffff;
+                &:hover {
+                    color: $main-page-text;
+                    background-color: #ffffff;
+                }
+            }
+        }
+        
+        &__button {
+            visibility: hidden;
+            position: relative;
+            transform: translateY(200px);
+            top: -5px;
+            height: 1px;
+            margin: 0; 
+            float: left;
+            transition: height .4s ease, top .4s ease, margin .5s ease, transform .5s ease;
+        }
+    }
+}

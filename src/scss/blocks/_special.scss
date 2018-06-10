@@ -1,0 +1,39 @@
+.special {
+    padding: $outside-padding;
+    padding-bottom: 20px;
+    margin: 20px 0;
+    background: $special;
+    text-align: center;
+    font-family: $font;
+    color: $special-text-color;
+    &__content{
+        max-width: 1000px;
+        padding-top: 10px;
+        margin: 0 auto;
+    }
+    &__description {
+        font-size: 24px;
+    }
+    &__offer {
+        margin: 10px 0;
+        font-size: 40px;
+        font-weight: 600;
+    }
+    &__start{
+        margin: 10px;
+        font-size: 20px;
+        color: $special-text-color;
+        border: solid $special-text-color 2px;
+        padding: 10px 45px;
+        &:hover {
+            color: $special;
+            background-color: $special-text-color;
+        }
+    }
+}
+
+  @media (min-width: 1024px) { 
+    .special {
+        margin: 50px 0 20px;
+    }
+  }

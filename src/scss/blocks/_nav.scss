@@ -1,0 +1,244 @@
+/* Stops the page from scrolling when the mobile menu is opened */
+body.no-scroll {
+    margin: 0; 
+    height: 100%; 
+    overflow: hidden;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: $outside-padding;
+    flex-basis: 1000px;
+    letter-spacing: 0.5px;
+    &__logo-image {
+      width: 100%;
+    }
+    &__logo {
+    z-index: 10;
+    width: 70%;
+    }
+    &__menu {
+      display: none;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    &__menu.show-menu {
+        z-index: 5;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100vw;
+        height: 100vh;
+        padding-top: 60px;
+        font-size: 30px;
+        line-height: 2.5;
+        text-align: right;
+        background-color: rgba(16, 31, 67, 0.9);
+    }
+    &__item {
+        font-family: $font;
+        color: $header-text-color;
+        padding: 0 10px;
+        text-decoration: none;
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            height: 2px;
+            bottom: -3px;
+            left: 10px;
+            right: 10px;
+            background: $header-text-color;
+          }
+        a {
+            text-decoration: none;
+            color: $header-text-color;
+        }
+    }
+    &__login {
+        display: none;
+        padding: 10px 20px 10px 20px;
+        color: $header-text-color;
+        border: solid #ffffff 2px;
+        font-weight: 400;
+        &:hover {
+            color: #101f43;
+            background-color: $header-text-color;
+        }
+    }
+    &__login.show-btn {
+        display: block;
+        position: absolute;
+        z-index: 5;
+        right: 10px;
+        top: 350px;
+        font-size: 30px;
+    }
+    
+
+// Menu hamburger styles
+    &__menu-icon {
+    z-index: 10;
+    width: 40px;
+    height: 10px;
+    position: relative;
+    transform: rotate(0deg);
+    transition: .5s ease-in-out;
+    }
+
+    &__menu-icon span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+    }
+    &__menu-icon span::before {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+    }
+    &__menu-icon span::after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+    }
+
+// Menu toggle styles
+  &__menu-icon span {
+    top: 0px;
+    transform-origin: left center;
+  }
+  
+  &__menu-icon span::before {
+    top: -10px;
+    transform-origin: left center;
+  }
+  
+  &__menu-icon span::after {
+    top: 10px;
+    transform-origin: left center;
+  }
+  
+  &__menu-icon.open span {
+    transform: rotate(45deg);
+    top: -10px;
+    left: 10px;
+  }
+  
+  &__menu-icon.open span::before {
+    width: 0%;
+    opacity: 0;
+  }
+  
+  &__menu-icon.open span::after {
+    transform: rotate(-90deg);
+    top: 20px;
+    left: 20px;
+  }
+}
+.fa-user {
+    padding-right: 10px;  /* иконка была слишком юлизко к тексту*/
+}
+
+@media (min-width: 667px) {
+    .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        font-size: 14px;
+        &__menu-icon {
+            display: none;
+        }
+        &__logo {
+            width: 35%;
+          }
+        &__menu {
+            width: 55%;
+            display: flex;
+            justify-content: center;
+          }
+        &__login {
+            width: auto;
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+    .fa-user {
+        display: none;
+    }
+ }
+ @media (min-width: 768px) { 
+    .nav {
+        padding: $padding-med-screen;
+        font-size: 16px;
+        &__logo {
+            width: 30%;
+          }
+        &__menu {
+            width: 55%;
+          }
+          &__login {
+            width: auto;
+        }
+    }
+    .fa-user {
+        display: block;
+    }
+ }
+  
+ @media (min-width: 1024px) {
+    .nav {
+        padding: $padding-big-screen;
+        &__menu {
+            width: 60%;
+          }
+        &__login {
+            width: auto;
+        }
+        &__item {
+            &::before {
+                visibility: hidden;
+                transform: scaleX(0);
+                transition: transform .2s linear;
+              }
+            &:hover::before,
+            &:focus::before {
+                visibility: visible;
+                transform: scaleX(1);
+            }
+        }
+    }
+ }
+
+
+
+  
+  

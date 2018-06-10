@@ -1,0 +1,127 @@
+.footer {
+    background: $footer-bg;
+    color: $footer-text;
+    padding: $outside-padding;
+    font-family: $font;
+    line-height: 1.4;
+    padding-bottom: 30px;
+    &__row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        max-width: 1000px;
+        flex: 0 0 100%;
+    }
+    &__rights {
+        width: 100%;
+        margin-top: 20px;
+        line-height: 1.6;
+    }
+    &__map {
+        margin-top: 20px;
+    }
+    &__logo {
+        width: 100%;
+        display: block;
+        margin: 0 auto;
+    }
+    &__copyright {
+        padding: 10px 0 5px;
+        text-align: center;
+        font-size: 12px;
+    }
+    &__copyright-info {
+        font-size: 14px;
+    }
+    &__header {
+        margin: 0;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    &__col {
+        p {
+            margin: 10px 0;
+            line-height: 1.4;
+            padding-right: 15px;
+            padding-bottom: 10px;
+        }
+    }
+    &__map-item {
+        color: $footer-text;
+        text-decoration: none;
+        font-size: 16px;
+        position: relative;
+        display: inline;
+        border-bottom: 2px solid $footer-text;
+         
+        transition: border-bottom .2s ease-in;
+    }
+}
+
+@media (min-width: 667px)  {
+    .footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        &__logo {
+            width: 50%;
+        }
+
+        &__rights {
+            text-align: left;
+            flex-basis: 100%;
+            box-sizing: border-box;
+        }
+
+        &__map {
+            flex-basis: 100%;
+            display: flex;
+            flex-wrap: wrap;   
+        }
+        &__col {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            flex-direction: column;
+            box-sizing: border-box;
+            flex: 0 0 50%;
+            p {
+                padding-bottom: 0;
+            }
+
+        }
+    }
+}
+
+@media (min-width: 1024px) { 
+    .footer {
+        &__logo {
+            width: 70%;
+            margin: 0;
+        }
+        &__copyright {
+            text-align: left;
+        }
+        &__header {
+            margin: 0px 0 20px;
+            font-size: 20px;
+        }
+        &__rights {
+            flex-basis: 50%;
+        }
+        &__copyright-info {
+            padding-right: 30px;
+        }
+        &__map {
+            flex-basis: 50%;
+        }
+
+        &__map-item {
+            border-bottom: 2px solid $footer-bg;
+            &:hover,
+            &:focus {
+                border-bottom: 2px solid $footer-text;
+            }
+        }
+    }
+}

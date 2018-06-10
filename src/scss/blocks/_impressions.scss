@@ -1,0 +1,93 @@
+.impressions {
+    font-family: $font;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: $outside-padding;
+    &__header {
+        width: 100%;
+        text-align: center;
+        font-size: 40px;
+        font-weight: 100;
+    }
+    &__item {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 20px 0;
+    }
+    &__image {
+        margin: auto;
+        min-height: 1px;
+        width: 30%;
+    }
+    &__picture {
+        max-width: 100%;
+        border-radius: 50%;        
+        display: block;
+    }
+
+    &__name {
+        text-align: center;
+        margin: 10px 0 5px;
+        font-size: 18px;
+        font-weight: 600;
+    }
+    &__paragraph {
+        margin: 0;
+        font-size: 16px;
+        line-height: 1.6;
+        font-style: italic;
+    }
+    &__btn {
+        margin: 10px;
+        font-size: 20px;
+        color: $main-page-text;
+        padding: 10px 45px;
+        border: solid $main-page-text 2px;
+        margin-bottom: 40px;
+        &:hover {
+            background-color: $main-page-text;
+            color: #ffffff;
+        }
+    }
+}
+
+@media (min-width: 667px)  {
+    .impressions {
+        &__item {
+            box-sizing: border-box;
+            flex-direction: row;
+            margin: 16px 0;
+        }
+        &__description {
+            margin: 0 20px; 
+            width: 80%;
+        }
+        &__image {
+            margin-top: 10px;
+            width: 20%;
+        }
+        &__name {
+            text-align: left;
+        }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .impressions {
+        &__item {
+            width: 50%;
+        }
+        &__description { 
+            width: 70%;
+        }
+        &__image {
+            width: 30%;
+        }
+        &__paragraph {
+            padding-right: 10px;
+        }
+    }
+  }

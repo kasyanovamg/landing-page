@@ -1,0 +1,88 @@
+.other {
+    padding: $outside-padding;
+    font-family: $font;
+    display: flex;
+    flex-wrap: wrap;
+    &__header {
+        width: 100%;
+        text-align: center;
+        font-size: 40px;
+        font-weight: 100;
+        margin: 0 0 10px;
+    }
+    &__title {
+        margin: auto;
+        text-align: center;
+        align-self: center;
+        padding: 10px;
+        z-index: 10;
+        font-size: 18px;
+        font-weight: 800;
+        line-height: 1.6;
+        display: inline;
+        color: $main-page-text;
+
+        transition: color .2s linear, background-color .4s ease-in;
+    }
+    &__item {
+        display: flex;
+        height: 135px;
+        position: relative;
+        background-size: cover;
+
+        transition: transform .2s linear;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.6);
+            transition: background .4s ease-in;
+        }
+
+        &_mobile {
+            background-image: url(../img/img-1.jpg);
+        }
+
+        &_web {
+            background-image: url(../img/img-2.jpg);
+        }
+
+        &_front {
+            background-image: url(../img/img-3.jpg);
+        }
+        &_machine {
+            background-image: url(../img/img-4.jpg);
+        }
+
+        &:hover::before {
+            background-color: rgba(255, 255, 255, 0.05);
+            box-shadow: $shadow;
+        }
+
+        &:hover .other__title {
+            color: #ffffff;
+            span {
+                background-color :$main-page-text;  
+
+            }
+        }
+
+    }
+}
+
+@media (min-width: 1024px) { 
+    .other {
+        &__header {
+            margin: 40px 0 30px;
+        }
+        &__item {
+            &:hover  {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
