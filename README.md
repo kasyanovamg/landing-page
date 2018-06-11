@@ -3,7 +3,7 @@
 _Technology used:_
 
 * HTML
-* Preprosessor: SASS
+* Preprocessor: SASS
 * JQuery
 * BEM methodology
 * Task runner: Gulp
